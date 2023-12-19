@@ -9,4 +9,6 @@ public class BlogApiContext: DbContext
 
     public BlogApiContext(DbContextOptions<BlogApiContext> options) : base(options){
     }
+
+    
 }
