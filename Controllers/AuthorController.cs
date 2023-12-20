@@ -6,7 +6,7 @@ namespace blogapi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class AuthorController(BlogApiContext dbContext) : ControllerBase{
+public class AuthorController(BlogApiContext dbContext) : Controller{
     private readonly BlogApiContext _dbcontext = dbContext;
 
     [HttpGet]
