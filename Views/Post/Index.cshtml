@@ -1,6 +1,9 @@
 @model List<blogapi.Models.Post>
 
 <style>
+    .edit-button{
+        background-color: transparent;
+    }
     table {
         width: 100%;
         border-collapse: collapse;
@@ -27,9 +30,12 @@
 <table>
     <thead>
         <tr>
+            <th style="display: none;">Id</th>
             <th>Title</th>
             <th>Content</th>
             <th>Date Created</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
     </thead>
     <tbody>
@@ -39,6 +45,8 @@
                 <td>@post.Title</td>
                 <td>@post.Content</td>
                 <td>@post.PublicationDate</td>
+                <td><button class="edit-button" data-post-edit-id="@post.Id"><img width="50" height="50" src="https://img.icons8.com/ios-filled/50/40C057/edit--v1.png" alt="edit--v1"/></button></td>
+                <td><button class="delete-button" data-post-delete-id="@post.Id"><img width="50" height="50" src="https://img.icons8.com/material-rounded/50/FA5252/filled-trash.png" alt="filled-trash"/></button></td>
             </tr>
         }
     </tbody>

@@ -1,0 +1,16 @@
+@{
+    Layout = "../Shared/_Layout";
+}
+
+<div class="container mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to the Blog!</h1>
+        <p class="lead">Explore the latest blog posts created by our users.</p>
+
+        <!-- Buttons with Bootstrap styling -->
+        <div class="btn-group" role="group" aria-label="Login and Register Buttons">
+            <a href="@Url.Action("Index", "Authentication")" class="btn btn-primary btn-lg">Login</a>
+            <a href="@Url.Action("Register", "Authentication")" class="btn btn-primary btn-lg">Register</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+@model blogapi.Models.Author
+@{
+    Layout = "../Shared/_Layout";
+}
+
+<div class="container mt-5 d-flex flex-row justify-content-around">
+    <!-- Login Form -->
+    <div class="card form-container">
+        <div class="card-header form-header">
+            <h2>Login</h2>
+        </div>
+        <div class="card-body form-body">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">Username:</label>
+                    <input type="text" class="form-control" id="loginUsername" name="loginUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" class="form-control" id="loginPassword" name="loginPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Form -->
+    <div class="card form-container">
+        <div class="card-header form-header">
+            <h2>Register</h2>
+        </div>
+        <div class="card-body form-body">
+            @using (Html.BeginForm("Register", "AuthenticationController", FormMethod.Post, new { @class = "form" }))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name)
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password)
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-success">Register</button>
+            }
+        </div>
+    </div>
+</div>
