@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace blogapi.Controllers;
 
 [Authorize]
+[Route("[controller]")]
 public class PostController(BlogApiContext dbContext) : Controller
 {
     private BlogApiContext _dbContext = dbContext;

@@ -11,27 +11,38 @@ public class AuthenticationController(BlogApiContext dbContext) : Controller
 {
     private BlogApiContext _dbContext = dbContext;
 
-//Si solo retorno una vista, no es necesario usar un metodo async
-    [HttpGet]
-    public ActionResult Index(){
+    //Si solo retorno una vista, no es necesario usar un metodo async
+    [HttpGet("Login")]
+    public ActionResult Login()
+    {
         return View();
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Login(){
+    [HttpGet("Register")]
+    public ActionResult Register()
+    {
+        return View();
+    }
+
+    [HttpPost("Login")]
+    public async Task<IActionResult> Login(Author model)
+    {
         return NotFound();
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Register(Author model){
+    [HttpPost("Register")]
+    public async Task<IActionResult> Register(Author model)
+    {
         string mail = @model.Email;
         string password = @model.Password;
-        
 
-        return NotFound();        
+
+        return NotFound();
     }
 
-    public async Task<IActionResult> Logout(){
+    [HttpPost("Logout")]
+    public async Task<IActionResult> Logout()
+    {
         return Ok();
     }
 
